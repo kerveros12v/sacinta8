@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class PagesController extends Controller
 {
@@ -13,7 +14,8 @@ class PagesController extends Controller
     }
     public function sexos1()
     {
-        return view('sexo');
+        $sex = 'App\Models\Sexo'::all();
+        return view('sexo', compact('sex'));
     }
     function inicio()
     {

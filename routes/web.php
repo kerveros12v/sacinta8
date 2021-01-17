@@ -13,7 +13,6 @@ use App\Http\Controllers;
 |
 */
 
-//Route::get('/', [PagesController::class, 'inicio']);
 Route::get('/', 'App\Http\Controllers\PagesController@inicio');
 Route::get('plantillabase', 'App\Http\Controllers\PagesController@plantillabase')->name('plantillabase');
 Route::get('sexos', 'App\Http\Controllers\PagesController@sexos1')->name('sexos');
