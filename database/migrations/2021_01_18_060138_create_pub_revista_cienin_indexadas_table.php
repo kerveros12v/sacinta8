@@ -14,7 +14,13 @@ class CreatePubRevistaCieninIndexadasTable extends Migration
     public function up()
     {
         Schema::create('pub_revista_cienin_indexadas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('pubRevistasCienInIndexadasId');
+            $table->string('prciCodigo', 45);
+            $table->string('pubRevistasCienInIndexadas', 50);
+            $table->integer('prciOculto');
+            $table->integer(' prciAccion');
+            $table->date('prcifecha');
+            $table->string('prciuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,13 @@ class CreateTipoColegiosTable extends Migration
     public function up()
     {
         Schema::create('tipo_colegios', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoColegioId');
+            $table->string('tipocolegiocodigo', 4);
+            $table->string('tipoColegio', 45);
+            $table->integer('tipocolegioOculto');
+            $table->integer('tipocolegioAccion');
+            $table->date('tipocolegiofecha');
+            $table->string('tipocolegiouser', 45);
             $table->timestamps();
         });
     }

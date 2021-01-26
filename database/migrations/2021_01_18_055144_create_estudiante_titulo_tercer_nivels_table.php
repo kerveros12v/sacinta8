@@ -14,7 +14,13 @@ class CreateEstudianteTituloTercerNivelsTable extends Migration
     public function up()
     {
         Schema::create('estudiante_titulo_tercer_nivels', function (Blueprint $table) {
-            $table->id();
+            $table->increments('ettnid');
+            $table->integer('fkestudiantesettn');
+            $table->integer('fktitulotercernivelettn');
+            $table->integer('ettnoculto');
+            $table->integer('ettnaccion');
+            $table->date('ettnfecha');
+            $table->string('ettnuser', 45);
             $table->timestamps();
         });
     }

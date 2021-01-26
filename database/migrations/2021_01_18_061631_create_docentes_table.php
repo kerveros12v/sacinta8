@@ -14,7 +14,43 @@ class CreateDocentesTable extends Migration
     public function up()
     {
         Schema::create('docentes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('iddocente');
+            $table->string('codigodocente');
+            $table->string('fkDnumeroIdentificacion', 10);
+            $table->string('direccionDomiciliaria', 150);
+            $table->string('numeroCelular', 10);
+            $table->string('correoElectronico', 30);
+            $table->string('numDomicilio', 7);
+            $table->date('fechaIngresoIES');
+            $table->date('fechaSalidaIES');
+            $table->string('nombreUnidadAcademica', 50);
+            $table->integer('nroasignaturasdocente');
+            $table->integer('nroHorasLaborablesSemanaEnCarreraPrograma');
+            $table->integer('nroHorasClaseSemanaCarreraPrograma');
+            $table->integer('nroHorasInvestigacionSemanaCarreraPrograma');
+            $table->integer('nroHorasAdministrativasSemanaCarreraPrograma');
+            $table->integer('nroHorasOtrasActividadesSemanaCarreraPrograma');
+            $table->integer('nroHorasVinculacionSociedad');
+            $table->integer('salarioMensual');
+            $table->string('fechaInicioPeriodoSabatico', 10);
+            $table->integer('fkDPaisEstudiosId');
+            $table->string('tituloAObtener', 50);
+            $table->integer('fkDProvinciaSufragio');
+            $table->integer('fkDTipoEnfermedadCatastroficaId');
+            $table->integer('fkDRelacionLaboralIESId');
+            $table->integer('fkDEscalafonDocenteId');
+            $table->integer('fkDIngresoConConcursoMeritosId');
+            $table->integer('fkDCargoDirectivoId');
+            $table->integer('fkDDocenciaTecnicoSuperiorId');
+            $table->integer('fkDDocenciaTecnologicoId');
+            $table->integer('fkDEstaEnPeriodoSabaticoId');
+            $table->integer('fkDEstaCursandoEstudiosId');
+            $table->integer('fkDInstitucionDondeCursaEstudiosId');
+            $table->integer('fkDniveDeFormacionId');
+            $table->integer('docentesOculto');
+            $table->integer('docentesAccion');
+            $table->date('docentesfecha');
+            $table->string('docentesuser', 45);
             $table->timestamps();
         });
     }

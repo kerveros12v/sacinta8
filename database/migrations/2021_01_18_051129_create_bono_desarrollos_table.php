@@ -14,7 +14,13 @@ class CreateBonoDesarrollosTable extends Migration
     public function up()
     {
         Schema::create('bono_desarrollos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('bonoDesarrolloId');
+            $table->integer('bonodesarrollocodigo');
+            $table->string('bonoDesarrollo', 45);
+            $table->integer('bonodesarrolloOculto');
+            $table->integer('bonodesarrolloAccion');
+            $table->date('bonodesarrollofecha');
+            $table->string('bonodesarrollouser', 45);
             $table->timestamps();
         });
     }

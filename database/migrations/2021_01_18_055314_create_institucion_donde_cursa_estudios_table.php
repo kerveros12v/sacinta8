@@ -14,8 +14,13 @@ class CreateInstitucionDondeCursaEstudiosTable extends Migration
     public function up()
     {
         Schema::create('institucion_donde_cursa_estudios', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('idceId');
+            $table->string('idcedetalle', 100);
+            $table->integer('idceoculto');
+            $table->integer('idceaccion');
+            $table->date('idcefecha');
+    $table->string('idceuser', 45);
+    $table->timestamps();
         });
     }
 

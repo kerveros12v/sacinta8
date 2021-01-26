@@ -14,7 +14,13 @@ class CreateTiposDocumentosTable extends Migration
     public function up()
     {
         Schema::create('tipos_documentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoDocumentoId');
+            $table->integer('tipoDocumentocodigo');
+            $table->string('tipoDocumento', 45);
+            $table->integer('tipoDocumentoOculto');
+            $table->integer('tipoDocumentoAccion');
+            $table->date('tipoDocumentofecha');
+            $table->string('tipoDocumentouser', 45);
             $table->timestamps();
         });
     }

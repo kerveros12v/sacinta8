@@ -14,7 +14,14 @@ class CreateTipoBecasTable extends Migration
     public function up()
     {
         Schema::create('tipo_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoBecaId');
+            $table->integer('tipobecacodigo');
+            $table->string('tipoBeca', 10);
+            $table->integer('tipobecabool');
+            $table->integer('tipobecaOculto');
+            $table->integer('tipobecaAccion');
+            $table->date('tipobecafecha');
+            $table->string('tipobecauser', 45);
             $table->timestamps();
         });
     }

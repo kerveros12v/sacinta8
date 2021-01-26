@@ -14,7 +14,13 @@ class CreatePoseeBecasTable extends Migration
     public function up()
     {
         Schema::create('posee_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('poseeBecaId');
+            $table->string('poseebecacodigo', 4);
+            $table->string('poseeBeca', 2);
+            $table->integer('poseebecaOculto');
+            $table->integer('poseebecaAccion');
+            $table->date('poseebecafecha');
+            $table->string('poseebecauser', 45);
             $table->timestamps();
         });
     }

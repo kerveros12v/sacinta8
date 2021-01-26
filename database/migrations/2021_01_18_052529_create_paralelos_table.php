@@ -14,7 +14,13 @@ class CreateParalelosTable extends Migration
     public function up()
     {
         Schema::create('paralelos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('paraleloId');
+            $table->string('paralelocodigo',3);
+            $table->string('paralelo',3);
+            $table->integer('paraleloOculto');
+            $table->integer('paraleloAccion');
+            $table->date('paralelofecha');
+            $table->string('paralelouser',45);
             $table->timestamps();
         });
     }

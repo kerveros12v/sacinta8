@@ -14,7 +14,13 @@ class CreateEstaCursandoEstudiosTable extends Migration
     public function up()
     {
         Schema::create('esta_cursando_estudios', function (Blueprint $table) {
-            $table->id();
+            $table->increments('eceid');
+            $table->string('ececodigo');
+            $table->string('ece',60);
+            $table->integer('eceoculto');
+            $table->integer('eceaccion');
+            $table->date('ecefecha');
+            $table->string('eceuser',45);
             $table->timestamps();
         });
     }

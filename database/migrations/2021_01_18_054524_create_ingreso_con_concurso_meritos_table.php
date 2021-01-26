@@ -14,7 +14,13 @@ class CreateIngresoConConcursoMeritosTable extends Migration
     public function up()
     {
         Schema::create('ingreso_con_concurso_meritos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('iccmId');
+            $table->integer('iccmcodigo');
+            $table->string('iccmdetalle',4);
+            $table->integer('iccmoculto');
+            $table->integer('iccmaccion');
+            $table->date('iccmfecha');
+            $table->string('iccmuser',45);
             $table->timestamps();
         });
     }

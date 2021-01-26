@@ -14,7 +14,13 @@ class CreateTituloTercerNivelsTable extends Migration
     public function up()
     {
         Schema::create('titulo_tercer_nivels', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tituloTercerNivelId');
+            $table->integer('titulotercernivelcodigo');
+            $table->string('tituloTercerNivel', 120);
+            $table->integer('titulotercernivelOculto');
+            $table->integer('titulotercernivelAccion');
+            $table->date('titulotercernivelfecha');
+            $table->string('titulotercerniveluser', 45);
             $table->timestamps();
         });
     }

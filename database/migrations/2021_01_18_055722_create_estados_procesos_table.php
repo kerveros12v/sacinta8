@@ -14,7 +14,13 @@ class CreateEstadosProcesosTable extends Migration
     public function up()
     {
         Schema::create('estados_procesos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('epid');
+            $table->string('epcodigo', 4);
+            $table->string('epdetalle', 45);
+            $table->integer('epOculto');
+            $table->integer('epAccion');
+            $table->date('epFecha');
+            $table->string('epUser', 45);
             $table->timestamps();
         });
     }

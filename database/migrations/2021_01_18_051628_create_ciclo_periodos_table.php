@@ -14,7 +14,13 @@ class CreateCicloPeriodosTable extends Migration
     public function up()
     {
         Schema::create('ciclo_periodos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idcicloperiodo');
+            $table->string('cicloperiodocodigo', 11);
+            $table->string('ciclo', 45);
+            $table->integer('cicloperiodoOculto');
+            $table->integer('cicloperiodoAccion');
+            $table->date('cicloperiodofecha');
+            $table->string('cicloperiodouser', 45);
             $table->timestamps();
         });
     }

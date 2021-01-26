@@ -14,7 +14,14 @@ class CreateCantonsTable extends Migration
     public function up()
     {
         Schema::create('cantons', function (Blueprint $table) {
-            $table->id();
+            $table->increments('cantonId');
+            $table->string('cantoncodigo', 45);
+            $table->string('canton', 60);
+            $table->integer('cantonprovincia');
+            $table->integer('cantonOculto');
+            $table->integer('cantonAccion');
+            $table->date('cantonfecha');
+            $table->string('cantonuser', 45);
             $table->timestamps();
         });
     }

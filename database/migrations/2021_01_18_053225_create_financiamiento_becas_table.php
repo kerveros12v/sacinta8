@@ -14,7 +14,14 @@ class CreateFinanciamientoBecasTable extends Migration
     public function up()
     {
         Schema::create('financiamiento_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('financiamientoBecaid');
+            $table->string('financiamientobecacodigo', 6);
+            $table->string('financiamientoBeca', 45);
+            $table->integer('financiamientobecabool');
+            $table->integer('financiamientobecaOculto');
+            $table->integer('financiamientobecaAccion');
+            $table->date('financiamientobecafecha');
+            $table->string('financiamientobecauser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,13 @@ class CreateCargoDirectivosTable extends Migration
     public function up()
     {
         Schema::create('cargo_directivos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('cargoDirectivoId');
+            $table->string('cargodirectivocodigo', 10);
+            $table->string('cargoDirectivo', 45);
+            $table->integer('cargodirectivoOculto');
+            $table->integer('cargodirectivoAccion');
+            $table->date('cargodirectivofecha');
+            $table->string('cargodirectivouser', 45);
             $table->timestamps();
         });
     }

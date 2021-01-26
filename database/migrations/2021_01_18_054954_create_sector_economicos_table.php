@@ -14,8 +14,15 @@ class CreateSectorEconomicosTable extends Migration
     public function up()
     {
         Schema::create('sector_economicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('seid');
+            $table->string('secodigo', 2);
+            $table->string('sectorEconomico', 256);
+            $table->integer('seoculto');
+            $table->integer('seaccion');
+            $table->date('sefecha');
+            $table->string('seuser', 45);
             $table->timestamps();
+
         });
     }
 

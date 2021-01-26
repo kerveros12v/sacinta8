@@ -14,7 +14,15 @@ class CreateColegiosTable extends Migration
     public function up()
     {
         Schema::create('colegios', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idColegios');
+            $table->integer('colegioscodigo');
+            $table->string('colegio', 125);
+            $table->integer('canton_cantonId');
+            $table->integer('tipoColegio_tipoColegioId');
+            $table->integer('colegiosOculto');
+            $table->integer('colegiosAccion');
+            $table->date('colegiosfecha	date');
+            $table->string('colegiosuser', 45);
             $table->timestamps();
         });
     }

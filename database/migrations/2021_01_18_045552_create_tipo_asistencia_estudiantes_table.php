@@ -14,7 +14,13 @@ class CreateTipoAsistenciaEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('tipo_asistencia_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoAsistenciaEstudiantesId');
+            $table->string('taeCodigo', 7);
+            $table->string('tipoAsistenciaEstudiante', 45);
+            $table->integer('taeOculto');
+            $table->integer('taeAccion');
+            $table->date('taefecha');
+            $table->string('taesuser', 45);
             $table->timestamps();
         });
     }

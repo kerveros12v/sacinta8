@@ -14,7 +14,15 @@ class CreateEstudinateTrabajosTable extends Migration
     public function up()
     {
         Schema::create('estudinate_trabajos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('etid');
+            $table->string('nomempresa', 150);
+            $table->integer('fksectoreconomico');
+            $table->integer('fkestudinatet');
+            $table->integer('fkperiodo');
+            $table->integer('etoculto');
+            $table->integer('etaccion');
+            $table->date('etfecha');
+            $table->string('etuser', 45);
             $table->timestamps();
         });
     }

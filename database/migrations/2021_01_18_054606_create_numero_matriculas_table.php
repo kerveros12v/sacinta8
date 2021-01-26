@@ -14,7 +14,13 @@ class CreateNumeroMatriculasTable extends Migration
     public function up()
     {
         Schema::create('numero_matriculas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idnummatricula');
+            $table->integer('nummatriculacodigo');
+            $table->string('nummatricula', 45);
+            $table->integer('nummatriculasOculto');
+            $table->integer('nummatriculasAccion');
+            $table->date('nummatriculasfecha');
+            $table->string('nummatriculasuser', 45);
             $table->timestamps();
         });
     }

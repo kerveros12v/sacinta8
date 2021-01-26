@@ -14,7 +14,15 @@ class CreateDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('iddepartamentos');
+            $table->string('departamento', 45);
+            $table->string('departamentosSubdivision', 45);
+            $table->string('url	varchar', 45);
+            $table->integer('departamentosparametro');
+            $table->integer('departamentosOculto');
+            $table->integer('departamentosAccion');
+            $table->date('departamentosfecha');
+            $table->string('departamentosuser', 45);
             $table->timestamps();
         });
     }

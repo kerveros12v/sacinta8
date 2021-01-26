@@ -14,7 +14,13 @@ class CreateProyectosMacrosTable extends Migration
     public function up()
     {
         Schema::create('proyectos_macros', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idProyectosMacro');
+            $table->integer('proyectosmacrocodigo');
+            $table->string('proyectoMacro', 45);
+            $table->integer('proyectosmacrooculto');
+            $table->integer('proyectosmacroaccion');
+            $table->date('proyectosmacrofecha');
+            $table->string('proyectosmacrouser', 45);
             $table->timestamps();
         });
     }

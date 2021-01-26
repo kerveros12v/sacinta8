@@ -14,7 +14,15 @@ class CreateResidenciaEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('residencia_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('residenciaEstudiantesId');
+            $table->integer('fkestudianteid');
+            $table->string('direccionDomiciliariaResidencia', 100);
+            $table->integer('codigoPostal');
+            $table->integer('fkperiodo');
+            $table->integer('residenciaestudiantesOculto');
+            $table->integer('residenciaestudiantesAccion');
+            $table->date('residenciaestudiantesfecha');
+            $table->string('residenciaestudiantesuser', 45);
             $table->timestamps();
         });
     }

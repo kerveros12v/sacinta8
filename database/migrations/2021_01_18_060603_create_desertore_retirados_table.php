@@ -14,7 +14,17 @@ class CreateDesertoreRetiradosTable extends Migration
     public function up()
     {
         Schema::create('desertore_retirados', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idDesertoresRetiradosId');
+            $table->string('codigoITS', 11);
+            $table->integer('provincia_provinciaId');
+            $table->integer('tipoRetiroEstudianteId');
+            $table->integer('matriculas_matriculasId');
+            $table->string('desertoresretiradosMateria', 7);
+            $table->date('fechaDelDocumentoHabilitantePresentado');
+            $table->integer('desertoresretiradosOculto');
+            $table->integer('desertoresretiradosAccion');
+            $table->date('desertoresretiradosfecha');
+            $table->string('desertoresretiradosuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,14 @@ class CreatePracticaPreprofecionalesTable extends Migration
     public function up()
     {
         Schema::create('practica_preprofecionales', function (Blueprint $table) {
-            $table->id();
+            $table->increments('practicasPreProfecionalesId');
+            $table->integer('nroHorasPracticasPreprofesionalesPorPeriodo');
+            $table->integer('entornoInstitucionalPracticasProfesionalesid');
+            $table->integer('fksectorEconomicoid');
+            $table->integer('practicaspreprofecionalesOculto');
+            $table->integer('practicaspreprofecionalesAccion');
+            $table->date('practicaspreprofecionalesfecha');
+            $table->string('practicaspreprofecionalesuser', 45);
             $table->timestamps();
         });
     }

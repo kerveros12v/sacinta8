@@ -14,7 +14,14 @@ class CreateDistributivoCursoAsignaturasTable extends Migration
     public function up()
     {
         Schema::create('distributivo_curso_asignaturas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('dcaid');
+            $table->integer('fkcursosperiodoacademicod');
+            $table->integer('fkdistributivosId');
+            $table->integer('fkasignaturasId');
+            $table->integer('dcaOculto');
+            $table->integer('dcaAccion');
+            $table->date('dcafecha');
+            $table->string('dcasuser', 45);
             $table->timestamps();
         });
     }

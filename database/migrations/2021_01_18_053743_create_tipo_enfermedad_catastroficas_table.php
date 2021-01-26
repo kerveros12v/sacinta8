@@ -14,8 +14,15 @@ class CreateTipoEnfermedadCatastroficasTable extends Migration
     public function up()
     {
         Schema::create('tipo_enfermedad_catastroficas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tecid');
+            $table->integer('teccodigo');
+            $table->string('tipoEnfermedadCatastrofica',45);
+            $table->integer('tecOculto');
+            $table->integer('tecAccion');
+            $table->date('tecfecha');
+            $table->string('tecuser',45);
             $table->timestamps();
+
         });
     }
 

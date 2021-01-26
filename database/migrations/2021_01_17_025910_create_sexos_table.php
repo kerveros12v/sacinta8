@@ -21,6 +21,7 @@ class CreateSexosTable extends Migration
             $table->integer('sexoAccion');
             $table->date('sexofecha');
             $table->string('sexouser', 45);
+            $table->timestamps();
         });
     }
 

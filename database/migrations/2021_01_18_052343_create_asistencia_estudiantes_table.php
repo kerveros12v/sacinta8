@@ -14,7 +14,16 @@ class CreateAsistenciaEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('asistencia_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('asistenciaEstudiantesId');
+            $table->string('asistenciaestudiantescodigo',6);
+            $table->date('fecha');
+            $table->integer('matriculas_matriculasId');
+            $table->integer('fktipoAsistenciaEstudiantesId');
+            $table->integer('fkdistributivocursoasignaturaid');
+            $table->integer('asistenciaestudiantesOculto');
+            $table->integer('asistenciaestudiantesAccion');
+            $table->date('asistenciaestudiantesfecha');
+            $table->string('asistenciaestudiantesuser',45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,17 @@ class CreateMallaCurricularsTable extends Migration
     public function up()
     {
         Schema::create('malla_curriculars', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idmallacurricular');
+            $table->integer('iinstitutosId');
+            $table->integer('ccarrerasId');
+            $table->integer('nnivelAcademicoQueCursaId');
+            $table->integer('pperiodoacademicoId');
+            $table->integer('asignaturasnivel');
+            $table->integer('asignaturasprevia');
+            $table->integer('mallacurricularOculto');
+            $table->integer('mallacurricularAccion');
+            $table->date('mallacurricularfecha');
+            $table->string('mallacurricularuser', 45);
             $table->timestamps();
         });
     }

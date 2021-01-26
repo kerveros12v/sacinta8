@@ -14,7 +14,15 @@ class CreateSetecExperienciaLaboralsTable extends Migration
     public function up()
     {
         Schema::create('setec_experiencia_laborals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('selid');
+            $table->integer('fkaspirante');
+            $table->string('selnombreempresa', 100);
+            $table->integer('seltiempodetrabajo');
+            $table->string('selactividadRealizada', 100);
+            $table->integer('selOculto');
+            $table->integer('selAccion');
+            $table->date('selfecha');
+            $table->string('seluser', 45);
             $table->timestamps();
         });
     }

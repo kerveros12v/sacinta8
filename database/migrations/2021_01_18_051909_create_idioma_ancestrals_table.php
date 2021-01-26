@@ -14,7 +14,14 @@ class CreateIdiomaAncestralsTable extends Migration
     public function up()
     {
         Schema::create('idioma_ancestrals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('ididiomaAncestral');
+            $table->string('idiomasancestralcodigo', 4);
+            $table->string('idioma', 45);
+            $table->integer('idiomaetnia');
+            $table->integer('idiomaancestralOculto');
+            $table->integer('idiomaancestralAccion');
+            $table->date('idiomaancestralfecha');
+            $table->string('idiomaancestraluser', 45);
             $table->timestamps();
         });
     }

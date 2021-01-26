@@ -14,7 +14,13 @@ class CreateTipoRetiroEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('tipo_retiro_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoRetiroEstudianteId');
+            $table->integer('trecodigo');
+            $table->string('tipoRetiroEstudiante', 45);
+            $table->integer('treOculto');
+            $table->integer('treAccion');
+            $table->date('trefecha');
+            $table->string('treuser', 45);
             $table->timestamps();
         });
     }

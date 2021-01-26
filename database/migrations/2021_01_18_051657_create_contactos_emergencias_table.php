@@ -14,7 +14,16 @@ class CreateContactosEmergenciasTable extends Migration
     public function up()
     {
         Schema::create('contactos_emergencias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('contactosEmergenciaId');
+            $table->string('nombreContactoEmergencia', 120);
+            $table->string('numeroContactosEmergencia', 10);
+            $table->integer('estudiantes_numeroIdentificacion'); //Cambiar a codigo del estudiante
+            $table->integer('parentescos_idParentescos');
+            $table->integer('contactosperiodo');
+            $table->integer('contactosemergenciaOculto');
+            $table->integer('contactosemergenciaAccion');
+            $table->date('contactosemergenciafecha');
+            $table->string('contactosemergenciauser', 45);
             $table->timestamps();
         });
     }

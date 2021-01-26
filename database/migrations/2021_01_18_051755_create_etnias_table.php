@@ -14,7 +14,13 @@ class CreateEtniasTable extends Migration
     public function up()
     {
         Schema::create('etnias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('etniaId');
+            $table->integer('etniascodigo');
+            $table->string('etnia', 45);
+            $table->integer('etniasOculto');
+            $table->integer('etniasAccion');
+            $table->date('etniasfecha');
+            $table->string('etniasuser', 45);
             $table->timestamps();
         });
     }

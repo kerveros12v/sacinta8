@@ -14,7 +14,13 @@ class CreateEscalafonDocentesTable extends Migration
     public function up()
     {
         Schema::create('escalafon_docentes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('escalafonDocenteId');
+            $table->string('escalafondocentecodigo', 4);
+            $table->string('escalafonDocente', 45);
+            $table->integer('escalafondocenteOculto');
+            $table->integer('escalafondocenteAccion');
+            $table->date('escalafondocentefecha');
+            $table->string('escalafondocenteuser', 45);
             $table->timestamps();
         });
     }

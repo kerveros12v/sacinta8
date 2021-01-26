@@ -14,7 +14,14 @@ class CreateSextaRazonBecasTable extends Migration
     public function up()
     {
         Schema::create('sexta_razon_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('sextaRazonBecaId');
+            $table->string('sextaRazonBeca', 20);
+            $table->integer('sextarazonbecacodigo');
+            $table->integer('sextarazonbecabool');
+            $table->integer('sextarazonbecaOculto');
+            $table->integer('sextarazonbecaAccion');
+            $table->date('sextarazonbecafecha');
+            $table->string('sextarazonbecauser', 45);
             $table->timestamps();
         });
     }

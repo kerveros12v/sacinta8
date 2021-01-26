@@ -14,7 +14,13 @@ class CreateRecibePensionDiferenciadasTable extends Migration
     public function up()
     {
         Schema::create('recibe_pension_diferenciadas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('rpdId');
+            $table->integer('rpdcodigo');
+            $table->string('recibePensionDiferenciada',10);
+            $table->integer('rpdoculto');
+            $table->integer('rpdaccion');
+            $table->date('rpdfecha');
+            $table->string('rpduser',45);
             $table->timestamps();
         });
     }

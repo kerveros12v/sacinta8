@@ -14,7 +14,13 @@ class CreateTipoCarrerasTable extends Migration
     public function up()
     {
         Schema::create('tipo_carreras', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoCarrerasId');
+            $table->integer('tipocarrerascodigo');
+            $table->string('tipoCarreras', 60);
+            $table->integer('tipocarrerasOculto');
+            $table->integer('tipocarrerasAccion');
+            $table->date('tipocarrerasfecha');
+            $table->string('tipocarrerasuser', 45);
             $table->timestamps();
         });
     }

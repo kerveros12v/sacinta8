@@ -14,7 +14,13 @@ class CreateTiposSangresTable extends Migration
     public function up()
     {
         Schema::create('tipos_sangres', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoSangreId');
+            $table->integer('tipossangrescodigo');
+            $table->string('tipoSangre', 3);
+            $table->integer('tipossangreOculto');
+            $table->integer('tipossangreAccion');
+            $table->date('tipossangrefecha');
+            $table->string('tipossangreuser', 45);
             $table->timestamps();
         });
     }

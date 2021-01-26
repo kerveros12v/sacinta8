@@ -14,7 +14,13 @@ class CreateModalidadCarrerasTable extends Migration
     public function up()
     {
         Schema::create('modalidad_carreras', function (Blueprint $table) {
-            $table->id();
+            $table->increments('modalidadCarreraId');
+            $table->string('modalidadcarreracodigo');
+            $table->string('modalidadCarrera', 45);
+            $table->string('modalidadcarreraOculto');
+            $table->string('modalidadcarreraAccion');
+            $table->string('modalidadcarrerafecha');
+            $table->string('modalidadcarrerauser', 45);
             $table->timestamps();
         });
     }

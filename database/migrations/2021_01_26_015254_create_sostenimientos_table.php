@@ -14,7 +14,15 @@ class CreateSostenimientosTable extends Migration
     public function up()
     {
         Schema::create('sostenimientos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idSostenimiento');
+            $table->string('sostenimientoscodigo', 4);
+            $table->string('sostenimiento', 45);
+            $table->integer('sostenimientosOculto');
+            $table->integer('sostenimientosAccion');
+            $table->date('sostenimientosfecha');
+            $table->string('sostenimientosuser', 45);
+
+
             $table->timestamps();
         });
     }

@@ -14,7 +14,29 @@ class CreateSetecAspirantesTable extends Migration
     public function up()
     {
         Schema::create('setec_aspirantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('said');
+            $table->string('sanumidentificacion', 10);
+            $table->string('saprimerapellido', 60);
+            $table->string('segundoapellido', 60);
+            $table->string('primernombre', 60);
+            $table->string('segundonombre', 60);
+            $table->date('fechanacimientosa');
+            $table->integer('fkgenerosa');
+            $table->integer('fkformacionArtesano');
+            $table->integer('instruccionRegistroCivil');
+            $table->string('sainstriccionseleccionada', 100);
+            $table->integer('parroquiasa');
+            $table->string('sadireccion', 100);
+            $table->string('sacorreoelectronico', 60);
+            $table->string('satelefono', 10);
+            $table->string('sacelular', 10);
+            $table->integer('fktipodiscapacidadsa');
+            $table->integer('fksocioempleosa');
+            $table->integer('fkaccesodepartamento');
+            $table->integer('setecaspiranteOculto');
+            $table->integer('setecaspiranteAccion');
+            $table->date('setecaspirantefecha');
+            $table->string('saaspiranteuser', 45);
             $table->timestamps();
         });
     }

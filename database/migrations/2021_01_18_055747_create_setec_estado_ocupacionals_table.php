@@ -14,7 +14,13 @@ class CreateSetecEstadoOcupacionalsTable extends Migration
     public function up()
     {
         Schema::create('setec_estado_ocupacionals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('seoId');
+            $table->integer('seocodigo');
+            $table->string('seoestadoocupacional', 100);
+            $table->integer('seoOculto');
+            $table->integer('seoAccion');
+            $table->date('seofecha');
+            $table->string('seouser', 45);
             $table->timestamps();
         });
     }

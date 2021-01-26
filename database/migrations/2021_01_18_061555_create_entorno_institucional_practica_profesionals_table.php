@@ -14,7 +14,13 @@ class CreateEntornoInstitucionalPracticaProfesionalsTable extends Migration
     public function up()
     {
         Schema::create('entorno_institucional_practica_profesionals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('eipid');
+            $table->string('eipfcodigo', 4);
+            $table->string('eipp', 12);
+            $table->integer('eipfOculto');
+            $table->integer('eipfAccion');
+            $table->date('eipffecha');
+            $table->string('eipfuser', 45);
             $table->timestamps();
         });
     }

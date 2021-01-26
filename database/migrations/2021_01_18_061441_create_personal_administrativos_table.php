@@ -14,7 +14,28 @@ class CreatePersonalAdministrativosTable extends Migration
     public function up()
     {
         Schema::create('personal_administrativos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idpersonalAdministrativo');
+            $table->string('fkpnumeroIdentificacion', 10);
+            $table->string('direccionDomiciliaria', 150);
+            $table->date('provinciaSufragio');
+            $table->string('numeroCelular', 10);
+            $table->string('correoElectronico', 60);
+            $table->string('numDomicilio', 6);
+            $table->integer('porcentajeDiscapacidad');
+            $table->string('numCarnetDiscapacidad', 7);
+            $table->integer('tipoDiscapacidadid');
+            $table->integer('tipoEnfermedadCatastroficaId');
+            $table->integer('tipoPersonalAdministrativo');
+            $table->date('fechaIngresoIES');
+            $table->date('fechaSalidaIES');
+            $table->integer('relacionLaboralIESId');
+            $table->integer('ingresoConConcursoMeritos');
+            $table->integer('nroHorasLaborablesSemana');
+            $table->integer('salarioMensual');
+            $table->integer('personalaOculto');
+            $table->integer('personalaAccion');
+            $table->date('personalafecha');
+            $table->string('personalauser', 45);
             $table->timestamps();
         });
     }

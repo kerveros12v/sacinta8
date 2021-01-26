@@ -14,7 +14,15 @@ class CreateInstitutosTable extends Migration
     public function up()
     {
         Schema::create('institutos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('institutosId');
+            $table->integer('institutoscodigo');
+            $table->string('institutoNombre', 160);
+            $table->integer('fkcanton');
+            $table->integer('fkidSostenimiento');
+            $table->integer('institutosOculto');
+            $table->integer('institutosAccion');
+            $table->date('institutosfecha');
+            $table->string('institutosuser', 45);
             $table->timestamps();
         });
     }

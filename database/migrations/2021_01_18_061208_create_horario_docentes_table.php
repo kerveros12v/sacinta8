@@ -14,7 +14,14 @@ class CreateHorarioDocentesTable extends Migration
     public function up()
     {
         Schema::create('horario_docentes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idHorarioDocentes');
+            $table->integer('horas_idHoras');
+            $table->integer('dias_idDias');
+            $table->integer('fkdistributivocursoasignaturaid');
+            $table->integer('horariodocentesOculto');
+            $table->integer('horariodocentesAccion');
+            $table->date('horariodocentesfecha');
+            $table->string('horariodocentesuser', 45);
             $table->timestamps();
         });
     }

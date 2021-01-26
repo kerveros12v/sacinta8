@@ -14,7 +14,14 @@ class CreateTipoDiscapacidadsTable extends Migration
     public function up()
     {
         Schema::create('tipo_discapacidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoDiscapacidadid');
+            $table->string('tdcodigo', 6);
+            $table->string('tipoDiscapacidad', 45);
+            $table->integer('tipodiscapacidadbool');
+            $table->integer('tdOculto');
+            $table->integer('tdAccion');
+            $table->date('tdfecha');
+            $table->string('tduser', 45);
             $table->timestamps();
         });
     }

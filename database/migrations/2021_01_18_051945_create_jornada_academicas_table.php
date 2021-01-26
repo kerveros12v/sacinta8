@@ -14,7 +14,13 @@ class CreateJornadaAcademicasTable extends Migration
     public function up()
     {
         Schema::create('jornada_academicas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('jornadaAcademicaId');
+            $table->string('jornadaAcademicaCodigo', 2);
+            $table->string('jornadaAcademica', 45);
+            $table->integer('jornadasacademicasOculto');
+            $table->integer('jornadasacademicasAccion');
+            $table->date('jornadasacademicasfecha');
+            $table->string('jornadasacademicasuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,14 @@ class CreatePrimeraRazonBecasTable extends Migration
     public function up()
     {
         Schema::create('primera_razon_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('prbId');
+            $table->string('prbcodigo',4);
+            $table->string('primeraRazonBeca',20);
+            $table->integer('prbbool');
+            $table->integer('prboculto');
+            $table->integer('prbaccion');
+            $table->date('prbfecha');
+            $table->string('prbuser',45);
             $table->timestamps();
         });
     }

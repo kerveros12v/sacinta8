@@ -14,7 +14,18 @@ class CreatePeriodoAcademicosTable extends Migration
     public function up()
     {
         Schema::create('periodo_academicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('periodoacademicoId');
+            $table->string('codigoPeriodo', 11);
+            $table->string('periodoAcademico', 11);
+            $table->integer('fkcicloperiodo');
+            $table->date('fechaInicio');
+            $table->date('fechafin');
+            $table->string('observaciones', 100);
+            $table->integer('actual');
+            $table->integer('periodoacademicoOculto');
+            $table->integer('periodoacademicoAccion');
+            $table->date('periodoacademicofecha');
+            $table->string('periodoacademicouser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,12 @@ class CreateSocioempleosTable extends Migration
     public function up()
     {
         Schema::create('socioempleos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idsocioempleo');
+            $table->string('socioEmpleoregistro',10);
+            $table->integer('socioempleooculto');
+            $table->integer('socioempleoaccion');
+            $table->date('socioempleofecha');
+            $table->string('socioempleouser',45);
             $table->timestamps();
         });
     }

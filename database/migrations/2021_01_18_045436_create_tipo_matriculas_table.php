@@ -14,7 +14,13 @@ class CreateTipoMatriculasTable extends Migration
     public function up()
     {
         Schema::create('tipo_matriculas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoMatriculaId');
+            $table->integer('tipomatriculacodigo');
+            $table->string('tipoMatricula', 45);
+            $table->integer('tipomatriculaOculto');
+            $table->integer('tipomatriculaAccion');
+            $table->date('tipomatriculafecha');
+            $table->string('tipomatriculauser', 45);
             $table->timestamps();
         });
     }

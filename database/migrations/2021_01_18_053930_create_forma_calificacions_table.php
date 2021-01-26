@@ -14,7 +14,14 @@ class CreateFormaCalificacionsTable extends Migration
     public function up()
     {
         Schema::create('forma_calificacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idformaCalificacion');
+            $table->string('formaCalificacionTema', 100);
+            $table->integer('fchorasdocente');
+            $table->string('fchorasestudiante', 45);
+            $table->integer('fctenimientosoculto');
+            $table->integer('fctenimientosaccion');
+            $table->date('fctenimientosfecha');
+            $table->string('fctenimientosuser', 45);
             $table->timestamps();
         });
     }

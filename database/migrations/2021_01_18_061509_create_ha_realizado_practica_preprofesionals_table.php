@@ -14,7 +14,14 @@ class CreateHaRealizadoPracticaPreprofesionalsTable extends Migration
     public function up()
     {
         Schema::create('ha_realizado_practica_preprofesionals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('hrppid');
+            $table->string('hrppcodigo');
+            $table->string('hrpp', 4);
+            $table->tinyInteger('hppbool');
+            $table->integer('hrppOculto');
+            $table->integer('hrppAccion');
+            $table->date('hrppfecha');
+            $table->string('hrppuser', 45);
             $table->timestamps();
         });
     }

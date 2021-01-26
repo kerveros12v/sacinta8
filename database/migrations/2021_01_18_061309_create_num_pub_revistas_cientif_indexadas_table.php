@@ -14,7 +14,12 @@ class CreateNumPubRevistasCientifIndexadasTable extends Migration
     public function up()
     {
         Schema::create('num_pub_revistas_cientif_indexadas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nprciid');
+            $table->string('nprci', 50);
+            $table->integer('nprciOculto');
+            $table->integer('nprciAccion');
+            $table->date('nprcifecha');
+            $table->string('nprciuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,13 @@ class CreateParentescosTable extends Migration
     public function up()
     {
         Schema::create('parentescos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idParentescos');
+            $table->string('parentescocodigo',10);
+            $table->string('parentesco',45);
+            $table->integer('parentescosOculto');
+            $table->integer('parentescosAccion');
+            $table->date('parentescosfecha');
+            $table->string('parentescosuser',45);
             $table->timestamps();
         });
     }

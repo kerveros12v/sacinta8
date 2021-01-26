@@ -14,7 +14,16 @@ class CreateDiscapacidadEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('discapacidad_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('deid');
+            $table->string('carnetconadis', 7);
+            $table->integer('fkestudiantede');
+            $table->integer('fktipodiscapacidadde');
+            $table->integer('deporcentaje');
+            $table->integer('deperiodo');
+            $table->integer('deoculto');
+            $table->integer('deaccion');
+            $table->date('defecha');
+            $table->string('deuser', 45);
             $table->timestamps();
         });
     }

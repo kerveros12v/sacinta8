@@ -14,7 +14,17 @@ class CreateSetecsTable extends Migration
     public function up()
     {
         Schema::create('setecs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idsetec');
+            $table->integer('fksetecAspirante');
+            $table->integer('fksetecEncuestador');
+            $table->integer('fksetecCertificacion');
+            $table->integer('fkseteccondiciondevida');
+            $table->integer('fkseteccondicionlaboral');
+            $table->integer('fksecestadocertificacion');
+            $table->integer('setecOculto');
+            $table->integer('setecAccion');
+            $table->date('setecfecha');
+            $table->string('setecuser', 45);
             $table->timestamps();
         });
     }

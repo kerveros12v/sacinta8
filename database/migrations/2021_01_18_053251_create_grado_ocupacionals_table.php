@@ -14,7 +14,13 @@ class CreateGradoOcupacionalsTable extends Migration
     public function up()
     {
         Schema::create('grado_ocupacionals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('gradoOcupacionalId');
+            $table->string('gradoOcupacionalCodigo', 4);
+            $table->string('gradoOcupacional', 45);
+            $table->integer('gradosocupacionalesOculto');
+            $table->integer('gradosocupacionalesAccion');
+            $table->date('gradosocupacionalesfecha');
+            $table->string('gradosocupacionalesuser', 45);
             $table->timestamps();
         });
     }

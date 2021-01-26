@@ -14,7 +14,14 @@ class CreateQuintaRazonBecasTable extends Migration
     public function up()
     {
         Schema::create('quinta_razon_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('qrbid');
+            $table->integer('qrbcodigo');
+            $table->string('quintaRazonBeca', 20);
+            $table->integer('qrbbool');
+            $table->integer('qrboculto');
+            $table->integer('qrbaccion');
+            $table->date('qrbfecha');
+            $table->string('qrbuser', 45);
             $table->timestamps();
         });
     }

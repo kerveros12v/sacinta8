@@ -14,7 +14,13 @@ class CreateGenerosTable extends Migration
     public function up()
     {
         Schema::create('generos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('generoId');
+            $table->string('generoscodigo', 4);
+            $table->string('genero', 45);
+            $table->integer('generoOculto');
+            $table->integer('generoAccion');
+            $table->date('generofecha');
+            $table->string('generouser', 45);
             $table->timestamps();
         });
     }

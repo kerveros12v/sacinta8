@@ -14,7 +14,12 @@ class CreateProyectosInvestigacionsTable extends Migration
     public function up()
     {
         Schema::create('proyectos_investigacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('proyectosInvestigacionId');
+            $table->string('piTema', 45);
+            $table->integer('piOculto');
+            $table->integer('piAccion');
+            $table->date('pifecha');
+            $table->string('piuser', 45);
             $table->timestamps();
         });
     }

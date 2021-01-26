@@ -14,7 +14,14 @@ class CreateHorasTable extends Migration
     public function up()
     {
         Schema::create('horas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idHoras');
+            $table->integer('nHora');
+            $table->string('horaInicio',5);
+            $table->string('horaFin',5);
+            $table->integer('horasOculto');
+            $table->integer('horasAccion');
+            $table->date('horasfecha');
+            $table->string('horasuser',45);
             $table->timestamps();
         });
     }

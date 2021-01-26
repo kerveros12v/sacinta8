@@ -14,7 +14,13 @@ class CreateRelacionLaboralIesTable extends Migration
     public function up()
     {
         Schema::create('relacion_laboral_ies', function (Blueprint $table) {
-            $table->id();
+            $table->increments('relacionLaboralIESId');
+            $table->integer('relacionlaboraliescodigo');
+            $table->string('relacionLaboralIES', 45);
+            $table->integer('relacionlaboraliesOculto');
+            $table->integer('relacionlaboraliesAccion');
+            $table->date('relacionlaboraliesfecha');
+            $table->string('relacionlaboraliesuser', 45);
             $table->timestamps();
         });
     }

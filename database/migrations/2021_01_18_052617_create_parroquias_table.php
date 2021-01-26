@@ -14,7 +14,14 @@ class CreateParroquiasTable extends Migration
     public function up()
     {
         Schema::create('parroquias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idparroquias');
+            $table->string('parroquiascodigo',10);
+            $table->string('parroquia',125);
+            $table->integer('parroquiasCanton');
+            $table->integer('parroquiaOculto');
+            $table->integer('parroquiaAccion');
+            $table->date('parroquiafecha');
+            $table->string('parroquiasUsuario',45);
             $table->timestamps();
         });
     }

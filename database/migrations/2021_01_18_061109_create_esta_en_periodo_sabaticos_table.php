@@ -14,7 +14,12 @@ class CreateEstaEnPeriodoSabaticosTable extends Migration
     public function up()
     {
         Schema::create('esta_en_periodo_sabaticos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('epsid');
+            $table->string('eps', 2);
+            $table->integer('epsoculto');
+            $table->integer('epsaccion');
+            $table->date('epsfecha');
+            $table->string('epsuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,13 @@ class CreateHaRepetidoAlmenosUnaMateriasTable extends Migration
     public function up()
     {
         Schema::create('ha_repetido_almenos_una_materias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('hranumid');
+            $table->integer('hranumcodigo');
+            $table->string('haRepetidoAlMenosUnaMateria',10);
+            $table->integer('hranumoculto');
+            $table->integer('hranumaccion');
+            $table->date('hranumfecha');
+            $table->string('hranumuser',45);
             $table->timestamps();
         });
     }

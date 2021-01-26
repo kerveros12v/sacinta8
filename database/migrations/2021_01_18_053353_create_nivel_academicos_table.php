@@ -14,7 +14,13 @@ class CreateNivelAcademicosTable extends Migration
     public function up()
     {
         Schema::create('nivel_academicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('nivelAcademicoQueCursaId');
+            $table->string('nivelacademicocodigo', 45);
+            $table->string('nivelAcademicoQueCursa', 45);
+            $table->integer('nivelacademicoOculto');
+            $table->integer('nivelacademicoAccion');
+            $table->date('nivelacademicofecha');
+            $table->string('nivelacademicouser', 45);
             $table->timestamps();
         });
     }

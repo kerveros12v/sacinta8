@@ -14,7 +14,31 @@ class CreateVinculacionSociedadsTable extends Migration
     public function up()
     {
         Schema::create('vinculacion_sociedads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('inculaciocionSociedadId');
+            $table->integer('matriculas_matriculasId');
+            $table->integer('docentes_nI');
+            $table->integer('proyectosmacro_id');
+            $table->integer('empresas_empresasId');
+            $table->integer('tapv_Id');
+            $table->integer('pappvs_id');
+            $table->integer('numProyecto');
+            $table->string('proyectoMicro', 200);
+            $table->string('objetivoProyecto', 45);
+            $table->date('fechaInicioProyecto');
+            $table->date('fechaFinProyecto');
+            $table->date('fechaPrecentacionProyecto');
+            $table->integer('numeroHorasProyecto');
+            $table->double('notaTutor');
+            $table->double('notauvcom');
+            $table->string('notaVinculacion', 15);
+            $table->integer('fisico');
+            $table->integer('digital');
+            $table->integer('certificado');
+            $table->string('vinculacion', 100);
+            $table->integer('vsOculto');
+            $table->integer('vsAccion');
+            $table->date('vsfecha');
+            $table->string('vsuser', 45);
             $table->timestamps();
         });
     }

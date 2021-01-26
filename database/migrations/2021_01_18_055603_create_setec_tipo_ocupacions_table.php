@@ -14,7 +14,13 @@ class CreateSetecTipoOcupacionsTable extends Migration
     public function up()
     {
         Schema::create('setec_tipo_ocupacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('stoid');
+            $table->string('stocodigo', 45);
+            $table->string('stotipoOcupacion', 100);
+            $table->integer('stooculto');
+            $table->integer('stoaccion');
+            $table->date('stofecha');
+            $table->string('stouser', 45);
             $table->timestamps();
         });
     }

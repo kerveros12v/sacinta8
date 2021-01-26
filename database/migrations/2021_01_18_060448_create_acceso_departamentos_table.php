@@ -14,7 +14,14 @@ class CreateAccesoDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('acceso_departamentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idaccesodepartamento');
+            $table->string('accesodepartamentocodigo', 5);
+            $table->integer('departamentos_iddepartamentos');
+            $table->integer('tipousuario_idtipousuario');
+            $table->integer('accesodepartamentoAccion');
+            $table->integer('accesodepartamentoOculto');
+            $table->date('accesodepartamentoFecha');
+            $table->string('accesodepartamentoUser', 45);
             $table->timestamps();
         });
     }

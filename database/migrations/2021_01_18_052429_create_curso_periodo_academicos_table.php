@@ -14,7 +14,14 @@ class CreateCursoPeriodoAcademicosTable extends Migration
     public function up()
     {
         Schema::create('curso_periodo_academicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('periodoAcademicoCursoId');
+            $table->string('cpacodigo', 45);
+            $table->integer('fkperiodoacademicoId');
+            $table->integer('fkidCursos');
+            $table->integer('cpaOculto');
+            $table->integer('cpaAccion');
+            $table->integer('cpafecha');
+            $table->string('cpauser', 45);
             $table->timestamps();
         });
     }

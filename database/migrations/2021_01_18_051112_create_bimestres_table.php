@@ -14,7 +14,13 @@ class CreateBimestresTable extends Migration
     public function up()
     {
         Schema::create('bimestres', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idBimestres');
+            $table->integer('bimestrescodigo');
+            $table->string('bimestre', 45);
+            $table->integer('bimestresOculto');
+            $table->integer('bimestresAccion');
+            $table->date('bimestresfecha');
+            $table->string('bimestresuser', 45);
             $table->timestamps();
         });
     }

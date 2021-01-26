@@ -14,7 +14,14 @@ class CreateObraPublicacionsTable extends Migration
     public function up()
     {
         Schema::create('obra_publicacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('obrasPublicacionescId');
+            $table->integer('fkpubRevistasCienInIndexadasId');
+            $table->integer('fknumPubRevistasCientifIndexadasId');
+            $table->string('docentesNumeroIdentificacion', 10);
+            $table->integer('obraspublicacionesOculto');
+            $table->integer('obraspublicacionesAccion');
+            $table->date('obraspublicacionesfecha');
+            $table->string('obraspublicacionesuser', 45);
             $table->timestamps();
         });
     }

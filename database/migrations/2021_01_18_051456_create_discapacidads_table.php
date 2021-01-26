@@ -14,7 +14,14 @@ class CreateDiscapacidadsTable extends Migration
     public function up()
     {
         Schema::create('discapacidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('discapacidadId');
+            $table->string('discapacidadcodigo', 6);
+            $table->string('discapacidad', 4);
+            $table->tinyInteger('discapacidadbool');
+            $table->integer('discapacidadOculto');
+            $table->integer('discapacidadAccion');
+            $table->date('discapacidadfecha');
+            $table->string('discapacidaduser', 45);
             $table->timestamps();
         });
     }

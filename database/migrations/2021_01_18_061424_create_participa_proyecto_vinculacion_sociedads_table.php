@@ -14,7 +14,12 @@ class CreateParticipaProyectoVinculacionSociedadsTable extends Migration
     public function up()
     {
         Schema::create('participa_proyecto_vinculacion_sociedads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('ppvsid');
+            $table->string('ppvs', 10);
+            $table->integer('ppvsOculto');
+            $table->integer('ppvsAccion');
+            $table->date('ppvsfecha');
+            $table->string('ppvsuser', 45);
             $table->timestamps();
         });
     }

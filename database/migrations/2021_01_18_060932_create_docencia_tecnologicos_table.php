@@ -14,7 +14,13 @@ class CreateDocenciaTecnologicosTable extends Migration
     public function up()
     {
         Schema::create('docencia_tecnologicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('docenciaTecnologicoId');
+            $table->string('docenciatecnologicocodigo',4);
+            $table->string('docenciaTecnologico', 4);
+            $table->integer('docenciatecnologicoOculto');
+            $table->integer('docenciatecnologicoAccion');
+            $table->date('docenciatecnologicofecha');
+            $table->string('docenciatecnologicouser', 45);
             $table->timestamps();
         });
     }

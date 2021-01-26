@@ -14,7 +14,16 @@ class CreateNotasTable extends Migration
     public function up()
     {
         Schema::create('notas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('notasid');
+            $table->integer('bidBimestres');
+            $table->integer('categoria');
+            $table->integer('fkidformaCalificacion');
+            $table->integer('fkdistributivocursoasignaturaid');
+            $table->integer('fkidSegundaTerceraMatricula');
+            $table->integer('notasOculto');
+            $table->integer('notasAccion');
+            $table->date('notasfecha');
+            $table->string('notasuser', 45);
             $table->timestamps();
         });
     }

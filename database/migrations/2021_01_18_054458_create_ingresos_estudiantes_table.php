@@ -14,7 +14,13 @@ class CreateIngresosEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('ingresos_estudiantes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('iestId');
+            $table->integer('iestcodigo');
+            $table->string('ingresosestudiante', 30);
+            $table->integer('iestoculto');
+            $table->integer('iestaccion');
+            $table->date('iestfecha');
+            $table->string('iestuser', 45);
             $table->timestamps();
         });
     }

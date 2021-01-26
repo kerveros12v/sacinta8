@@ -14,8 +14,18 @@ class CreateSegundaTerceraMatriculasTable extends Migration
     public function up()
     {
         Schema::create('segunda_tercera_matriculas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('stmid');
+            $table->string('fkinstitutos');
+            $table->string('fkmatriculas');
+            $table->string('fkasignaturas');
+            $table->string('fknivelacademico');
+            $table->string('fknummatriculas');
+            $table->string('stmoculto');
+            $table->string('stmaccion');
+            $table->date('stmfecha');
+            $table->string('stmuser',45);
             $table->timestamps();
+
         });
     }
 

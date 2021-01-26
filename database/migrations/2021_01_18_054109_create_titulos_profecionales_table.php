@@ -14,7 +14,13 @@ class CreateTitulosProfecionalesTable extends Migration
     public function up()
     {
         Schema::create('titulos_profecionales', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tituloProfecionalId');
+            $table->string('tpCodigo', 7);
+            $table->string('tituloProfecional', 160);
+            $table->integer('tpOculto');
+            $table->integer('tpAccion');
+            $table->date('tpfecha');
+            $table->string('tpuser', 45);
             $table->timestamps();
         });
     }

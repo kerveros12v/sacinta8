@@ -14,7 +14,14 @@ class CreateSegundaRazonBecasTable extends Migration
     public function up()
     {
         Schema::create('segunda_razon_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('srbId');
+            $table->integer('srbcodigo');
+            $table->string('segundaRazonBeca',20);
+            $table->integer('srbbool');
+            $table->integer('srboculto');
+            $table->integer('srbaccion');
+            $table->date('srbfecha');
+            $table->string('srbuser',45);
             $table->timestamps();
         });
     }

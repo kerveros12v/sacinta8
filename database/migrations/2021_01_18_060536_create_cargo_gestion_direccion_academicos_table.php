@@ -14,7 +14,14 @@ class CreateCargoGestionDireccionAcademicosTable extends Migration
     public function up()
     {
         Schema::create('cargo_gestion_direccion_academicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('cgdaId');
+            $table->string('cgdacodigo', 6);
+            $table->string('cargo', 100);
+            $table->integer('fkcargoDirectivoId');
+            $table->integer('cgdaOculto');
+            $table->integer('cgdaAccion');
+            $table->integer('cgdafecha');
+            $table->string('cgdauser', 45);
             $table->timestamps();
         });
     }

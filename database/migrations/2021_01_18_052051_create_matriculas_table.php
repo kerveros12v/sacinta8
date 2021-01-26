@@ -14,7 +14,33 @@ class CreateMatriculasTable extends Migration
     public function up()
     {
         Schema::create('matriculas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('matriculasId');
+            $table->string('codigoMatricula', 10);
+            $table->date('fechaMatricula');
+            $table->double('montoCreditoEducativo');
+            $table->double('montoAyudaEconomica');
+            $table->date('fechainicioCarrera');
+            $table->integer('enumeroIdentificacion');
+            $table->integer('ccarrerasId');
+            $table->integer('jjornadaAcademicaId');
+            $table->integer('pperiodoacademicoId');
+            $table->integer('pparaleloId');
+            $table->integer('ttipoMatriculaId');
+            $table->integer('nnivelAcademicoQueCursaId');
+            $table->integer('rrecibePensionDiferenciadaId');
+            $table->integer('eestudianteOcupacionId');
+            $table->integer('bbonoDesarrolloId');
+            $table->integer('iingresosestudianteId');
+            $table->integer('hhaRepetidoAlMenosUnaMateriaid');
+            $table->integer('hhaPerdidoLaGratuidadId');
+            $table->integer('ingresoTotalHogar');
+            $table->integer('fkNivelFormacionMadre');
+            $table->integer('fkNivelFormacionPadre');
+            $table->integer('cantidadMiembrosHogar');
+            $table->integer('matriculasOculto');
+            $table->integer('matriculasAccion');
+            $table->date('matriculasfecha');
+            $table->string('matriculasuser', 45);
             $table->timestamps();
         });
     }

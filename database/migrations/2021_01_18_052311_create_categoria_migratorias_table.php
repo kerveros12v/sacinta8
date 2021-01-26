@@ -14,7 +14,13 @@ class CreateCategoriaMigratoriasTable extends Migration
     public function up()
     {
         Schema::create('categoria_migratorias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('categoriaMigratoriaId');
+            $table->string('categoriasmigratoriacodigo',4);
+            $table->string('categoriaMigratoria', 45);
+            $table->integer('categoriasmigratoriaOculto');
+            $table->integer('categoriasmigratoriaAccion');
+            $table->date('categoriasmigratoriafecha');
+            $table->string('categoriasmigratoriauser', 45);
             $table->timestamps();
         });
     }

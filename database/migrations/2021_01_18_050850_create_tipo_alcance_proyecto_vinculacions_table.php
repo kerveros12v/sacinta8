@@ -14,7 +14,13 @@ class CreateTipoAlcanceProyectoVinculacionsTable extends Migration
     public function up()
     {
         Schema::create('tipo_alcance_proyecto_vinculacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tipoAlcanceProyectoVinculacionId');
+            $table->integer('tapvcodigo');
+            $table->string('tapvVinculacion', 45);
+            $table->integer('tapvOculto');
+            $table->integer('tapvAccion');
+            $table->date('tapvfecha');
+            $table->string('tapvuser', 45);
             $table->timestamps();
         });
     }

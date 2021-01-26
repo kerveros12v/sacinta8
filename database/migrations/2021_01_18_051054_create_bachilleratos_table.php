@@ -14,7 +14,15 @@ class CreateBachilleratosTable extends Migration
     public function up()
     {
         Schema::create('bachilleratos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('bachilleratoId');
+            $table->string('fkEstudiantesNumeroIdentificacion', 10);
+            $table->integer('fkTiposBacilleratotiposBacilleratoId');
+            $table->string('anioGraduacion', 10);
+            $table->integer('colegios_idColegios');
+            $table->integer('bachilleratoOculto');
+            $table->integer('bachilleratoAccion');
+            $table->date('bachilleratofecha');
+            $table->string('bachilleratouser', 45);
             $table->timestamps();
         });
     }

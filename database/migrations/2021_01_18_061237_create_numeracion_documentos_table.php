@@ -14,7 +14,13 @@ class CreateNumeracionDocumentosTable extends Migration
     public function up()
     {
         Schema::create('numeracion_documentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('numeracionDocumentosId');
+            $table->string('nombreDocumento', 45);
+            $table->integer('numeracionSiguiente');
+            $table->integer('numeraciondocumentosOculto');
+            $table->integer('numeraciondocumentosAccion');
+            $table->date('numeraciondocumentosfecha');
+            $table->string('numeraciondocumentosuser', 45);
             $table->timestamps();
         });
     }

@@ -14,7 +14,15 @@ class CreateDiscapacidadDocentesTable extends Migration
     public function up()
     {
         Schema::create('discapacidad_docentes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('discapacidadesDocentesId');
+            $table->string('docentesCarnetConadis', 7);
+            $table->integer('docentesPorcentale');
+            $table->string('docentes_numeroIdentificacion', 10);
+            $table->integer('tipoDiscapacidad_tipoDiscapacidadid');
+            $table->integer('discapacidadesdocentesOculto');
+            $table->integer('discapacidadesdocentesAccion');
+            $table->date('discapacidadesdocentesfecha');
+            $table->string('discapacidadesdocentesuser', 45);
             $table->timestamps();
         });
     }

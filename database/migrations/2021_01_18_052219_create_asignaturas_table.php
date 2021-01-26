@@ -14,7 +14,13 @@ class CreateAsignaturasTable extends Migration
     public function up()
     {
         Schema::create('asignaturas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('asignaturasId');
+            $table->string('codigoMateria',7);
+            $table->string('materia',150);
+            $table->integer('asignaturasOculto');
+            $table->integer('asignaturasAccion');
+            $table->date('asignaturasfecha');
+            $table->string('asignaturasuser',45);
             $table->timestamps();
         });
     }

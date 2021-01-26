@@ -14,8 +14,16 @@ class CreatePuebloNacionalidadsTable extends Migration
     public function up()
     {
         Schema::create('pueblo_nacionalidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('pnid');
+            $table->integer('pncodigo');
+            $table->string('pueblonacionalidad', 45);
+            $table->integer('pnetnia');
+            $table->integer('pnoculto');
+            $table->integer('pnaccion');
+            $table->date('pnfecha');
+            $table->string('pnuser', 45);
             $table->timestamps();
+
         });
     }
 

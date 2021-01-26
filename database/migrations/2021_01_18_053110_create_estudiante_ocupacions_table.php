@@ -14,7 +14,13 @@ class CreateEstudianteOcupacionsTable extends Migration
     public function up()
     {
         Schema::create('estudiante_ocupacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('estudianteOcupacionId');
+            $table->string('estudianteocupacioncodigo', 4);
+            $table->string('estudianteOcupacion', 20);
+            $table->integer('estudianteocupacionOculto');
+            $table->integer('estudianteocupacionAccion');
+            $table->date('estudianteocupacionfecha');
+            $table->string('estudianteocupacionuser', 45);
             $table->timestamps();
         });
     }

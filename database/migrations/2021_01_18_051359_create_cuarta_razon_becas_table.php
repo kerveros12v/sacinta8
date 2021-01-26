@@ -14,7 +14,14 @@ class CreateCuartaRazonBecasTable extends Migration
     public function up()
     {
         Schema::create('cuarta_razon_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('cuartaRazonBecaId');
+            $table->integer('cuartarazonbecacodigo');
+            $table->string('cuartaRazonBeca', 45);
+            $table->tinyInteger('cuartarazonbecabool');
+            $table->integer('cuartarazonbecaOculto');
+            $table->integer('cuartarazonbecaAccion');
+            $table->date('cuartarazonbecafecha');
+            $table->string('cuartarazonbecauser', 45);
             $table->timestamps();
         });
     }

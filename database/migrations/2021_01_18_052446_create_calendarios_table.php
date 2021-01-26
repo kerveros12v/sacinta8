@@ -14,7 +14,16 @@ class CreateCalendariosTable extends Migration
     public function up()
     {
         Schema::create('calendarios', function (Blueprint $table) {
-            $table->id();
+            $table->increments('idcalendario');
+            $table->string('calendariocodigo',45);
+            $table->string('calendarioactividades',250);
+            $table->date('calendariofechaactividad');
+            $table->string('calendarioTipo',45);
+            $table->string('calendariomoduloactivo',100);
+            $table->integer('calendariooculto');
+            $table->integer('calendarioaccion');
+            $table->date('calendariofecha');
+            $table->string('calendariouser',45);
             $table->timestamps();
         });
     }

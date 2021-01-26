@@ -14,7 +14,13 @@ class CreateHaPerdidoLaGratuidadsTable extends Migration
     public function up()
     {
         Schema::create('ha_perdido_la_gratuidads', function (Blueprint $table) {
-            $table->id();
+            $table->increments('hplgid');
+            $table->string('hplgcodigo');
+            $table->string('haperdidolagratuidad', 10);
+            $table->integer('hplgoculto');
+            $table->integer('hplgaccion');
+            $table->date('hplgfecha');
+            $table->string('hplguser', 45);
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateAplicacionBecasTable extends Migration
     {
         Schema::create('aplicacion_becas', function (Blueprint $table) {
             $table->increments('idAplicacionBecas');
-            $table->string('aplicacionbecascodigo');
+            $table->string('aplicacionbecascodigo',45);
             $table->integer('fktipoBecaId');
             $table->integer('fkfinanciamientoBecaid');
             $table->integer('montoBeca');
@@ -27,7 +27,7 @@ class CreateAplicacionBecasTable extends Migration
             $table->integer('fkcuartaRazonBecaId');
             $table->integer('fkquintaRazonBecaId');
             $table->integer('fksextaRazonBecaId');
-            $table->string('fknumeroIdentificacion');
+            $table->integer('fkestudiante');
             $table->date('abfechainicio');
             $table->date('abfechafin');
             $table->integer('abperiodo');
@@ -36,7 +36,8 @@ class CreateAplicacionBecasTable extends Migration
             $table->integer('aplicacionbecasOculto');
             $table->integer('aplicacionbecasAccion');
             $table->date('aplicacionbecasfecha');
-            $table->string('aplicacionbecasuser');
+            $table->string('aplicacionbecasuser',45);
+            $table->timestamps();
         });
     }
 

@@ -14,7 +14,13 @@ class CreateTiempoDedicacionsTable extends Migration
     public function up()
     {
         Schema::create('tiempo_dedicacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('tiempoDedicacionId');
+            $table->integer('tiempodedicacioncodigo');
+            $table->string('tiempoDedicacion', 45);
+            $table->integer('tiempodedicacionOculto');
+            $table->integer('tiempodedicacionAccion');
+            $table->date('tiempodedicacionfecha');
+            $table->string('tiempodedicacionuser', 45);
             $table->timestamps();
         });
     }
