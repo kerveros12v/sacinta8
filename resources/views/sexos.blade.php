@@ -1,6 +1,10 @@
 @extends('plantillabase')
+@section('menuprimario')
+
+
+@endsection()
 @section('contenido')
-.<form>
+<form>
     <div class="form-group">
         <label for="Codigo">Codigo</label>
         <input type="text" class="form-control" id="sexocodigo" aria-describedby="sexo codigo">
