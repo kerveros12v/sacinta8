@@ -20,7 +20,6 @@ class CreateCursosTable extends Migration
             $table->integer('fkparaleloId');
             $table->integer('fknivelAcademicoQueCursaId');
             $table->integer('fkjJornadaAcademicaId');
-            $table->integer('fkperiodo');
             $table->integer('cursosOculto');
             $table->integer('cursosAccion');
             $table->date('cursosfecha');

@@ -19,7 +19,7 @@ class CreateDesertoreRetiradosTable extends Migration
             $table->integer('provincia_provinciaId');
             $table->integer('tipoRetiroEstudianteId');
             $table->integer('matriculas_matriculasId');
-            $table->string('desertoresretiradosMateria', 7);
+            $table->integer('desertoresretiradosMateria');
             $table->date('fechaDelDocumentoHabilitantePresentado');
             $table->integer('desertoresretiradosOculto');
             $table->integer('desertoresretiradosAccion');

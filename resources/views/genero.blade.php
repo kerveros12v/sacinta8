@@ -1,40 +1,53 @@
 @extends('plantillabase')
 @section('menuprimario')
-@foreach($menudepartamentos as $dp)
-<h1>$dp->iddepartamentos</h1>
-@enforeach()
+
 @endsection()
 @section('contenido')
 <form>
-    <div class="form-group">
-        <label for="Codigo">Codigo</label>
-        <input type="text" class="form-control" id="sexocodigo" aria-describedby="sexo codigo">
-        <small id="sexo codigo" class="form-text text-muted">Codigo del sexo</small>
-    </div>
-    <div class="form-group">
-        <label for="sexo">Sexo</label>
-        <input type="text" class="form-control" id="sexo">
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="Codigo">Codigo</label>
+                    <input type="text" class="form-control" name="generoscodigo" id="generoscodigo" aria-describedby="Codigo Genero">
+                    <small id="codgenerosmall" name="codgenerosmall" class="form-text text-muted">Codigo del Genero</small>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="genero">Genero</label>
+                    <input type="text" class="form-control" id="genero" name="genero">
+                    <small id="generosmall" name="generosmall" class="form-text text-muted">Detalle del Genero</small>
 
-    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
 </form>
 
 <table class="table table-striped table-hover table-active" title="Perfiles Registradas Actualmente:">
     <tr class="ui-widget-header">
         <th scope="col">Codigo</th>
-        <th scope="col">Sexo</th>
+        <th scope="col">Genero</th>
         <th scope="col">Accion</th>
     </tr>
 
     <tbody id=contenedorsexos>
 
-        @foreach($sex as $item)
+        @foreach($genero as $item)
         <tr scope="row">
             <td>
-                {{$item->sexocodigo}}
+                {{$item->generoscodigo}}
             </td>
             <td>
-                {{$item->sexo}}
+                {{$item->genero}}
             </td>
             <td>
                 <a href="" class="btn btn-warning">Editar</a>

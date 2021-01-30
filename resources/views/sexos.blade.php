@@ -8,7 +8,7 @@
     <div class="form-group">
         <label for="Codigo">Codigo</label>
         <input type="text" class="form-control" id="sexocodigo" aria-describedby="sexo codigo">
-        <small id="sexo codigo" class="form-text text-muted">Codigo del sexo</small>
+        <small id="sexocodigo" class="form-text text-muted">Codigo del sexo</small>
     </div>
     <div class="form-group">
         <label for="sexo">Sexo</label>

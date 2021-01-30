@@ -15,7 +15,7 @@ class CreateBachilleratosTable extends Migration
     {
         Schema::create('bachilleratos', function (Blueprint $table) {
             $table->increments('bachilleratoId');
-            $table->string('fkEstudiantesNumeroIdentificacion', 10);
+            $table->integer('fkEstudiantesNumeroIdentificacion');
             $table->integer('fkTiposBacilleratotiposBacilleratoId');
             $table->string('anioGraduacion', 10);
             $table->integer('colegios_idColegios');

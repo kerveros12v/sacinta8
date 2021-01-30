@@ -16,7 +16,7 @@ class CreateDocentesTable extends Migration
         Schema::create('docentes', function (Blueprint $table) {
             $table->increments('iddocente');
             $table->string('codigodocente');
-            $table->string('fkDnumeroIdentificacion', 10);
+            $table->integer('fkDnumeroIdentificacion');
             $table->string('direccionDomiciliaria', 150);
             $table->string('numeroCelular', 10);
             $table->string('correoElectronico', 30);
@@ -33,8 +33,6 @@ class CreateDocentesTable extends Migration
             $table->integer('nroHorasVinculacionSociedad');
             $table->integer('salarioMensual');
             $table->string('fechaInicioPeriodoSabatico', 10);
-            $table->integer('fkDPaisEstudiosId');
-            $table->string('tituloAObtener', 50);
             $table->integer('fkDProvinciaSufragio');
             $table->integer('fkDTipoEnfermedadCatastroficaId');
             $table->integer('fkDRelacionLaboralIESId');

@@ -15,9 +15,9 @@ class CreatePersonalAdministrativosTable extends Migration
     {
         Schema::create('personal_administrativos', function (Blueprint $table) {
             $table->increments('idpersonalAdministrativo');
-            $table->string('fkpnumeroIdentificacion', 10);
+            $table->integer('fkpnumeroIdentificacion');
             $table->string('direccionDomiciliaria', 150);
-            $table->date('provinciaSufragio');
+            $table->integer('provinciaSufragio');
             $table->string('numeroCelular', 10);
             $table->string('correoElectronico', 60);
             $table->string('numDomicilio', 6);

@@ -15,14 +15,15 @@ class CreatePracticaEstudiantesTable extends Migration
     {
         Schema::create('practica_estudiantes', function (Blueprint $table) {
             $table->increments('practicasEstudiantesId');
-            $table->integer('estudiantes_numeroIdentificacion');
+            $table->integer('fkestudiante');
             $table->integer('fkPracticasPreProfecionalesId');
             $table->integer('fkhaRealizadoPracticasPreprofesionalesid');
             $table->string('nombreDeLaActividad', 100);
             $table->string('objetivoDeLaActividad', 100);
             $table->integer('periodoAcademico_periodoacademicoId');
             $table->integer('empresas_empresasId');
-            $table->string('representanteLega', 45);
+            $table->string('representanteLega', 60);
+            $table->string('tutorempresarial', 60);
             $table->integer('practicasestudiantesOculto');
             $table->integer('practicasestudiantesAccion');
             $table->date('practicasestudiantesfecha');

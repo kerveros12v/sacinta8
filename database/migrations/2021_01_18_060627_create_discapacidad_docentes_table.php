@@ -17,7 +17,7 @@ class CreateDiscapacidadDocentesTable extends Migration
             $table->increments('discapacidadesDocentesId');
             $table->string('docentesCarnetConadis', 7);
             $table->integer('docentesPorcentale');
-            $table->string('docentes_numeroIdentificacion', 10);
+            $table->integer('docentes_numeroIdentificacion');
             $table->integer('tipoDiscapacidad_tipoDiscapacidadid');
             $table->integer('discapacidadesdocentesOculto');
             $table->integer('discapacidadesdocentesAccion');

@@ -17,7 +17,7 @@ class CreateObraPublicacionsTable extends Migration
             $table->increments('obrasPublicacionescId');
             $table->integer('fkpubRevistasCienInIndexadasId');
             $table->integer('fknumPubRevistasCientifIndexadasId');
-            $table->string('docentesNumeroIdentificacion', 10);
+            $table->integer('docentesNumeroIdentificacion');
             $table->integer('obraspublicacionesOculto');
             $table->integer('obraspublicacionesAccion');
             $table->date('obraspublicacionesfecha');

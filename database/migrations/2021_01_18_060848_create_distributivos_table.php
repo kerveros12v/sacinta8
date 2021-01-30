@@ -22,11 +22,11 @@ class CreateDistributivosTable extends Migration
             $table->integer('numeroHorasInvestigacion');
             $table->integer('numeroHorasGestionDireccionAcacemica');
             $table->string('distributivosTotalHoras', 45);
-            $table->string('docentes_numeroIdentificacion', 10);
-            $table->integer('titulosprofecionales_TituloProfecionalId');
-            $table->integer('gradosocupacionales_gradoOcupacionalId');
-            $table->integer('tiempodedicacion_tiempoDedicacionId');
-            $table->integer('proyectosinvestigacion_ProyectosInvestigacionId');
+            $table->integer('fkdocentes');
+            $table->integer('fkTituloProfecionalId');
+            $table->integer('fkgradoOcupacionalId');
+            $table->integer('fktiempoDedicacionId');
+            $table->integer('fkProyectosInvestigacionId');
             $table->integer('distributivosOculto');
             $table->integer('distributivosAccion');
             $table->date('distributivosfecha');

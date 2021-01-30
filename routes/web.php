@@ -149,3 +149,7 @@ Route::get('tipos_sangres', 'App\Http\Controllers\PagesController@tipos_sangres'
 Route::get('titulo_tercer_nivels', 'App\Http\Controllers\PagesController@titulo_tercer_nivels')->name('titulo_tercer_nivels');
 Route::get('titulos_profecionales', 'App\Http\Controllers\PagesController@titulos_profecionales')->name('titulos_profecionales');
 Route::get('vinculacion_sociedads', 'App\Http\Controllers\PagesController@vinculacion_sociedads')->name('vinculacion_sociedads');
+/**
+ * SECCIO DE ACCION NUEVO
+ */
+Route::get('nuevo_estudiantes', 'App\Http\Controllers\PagesController@nuevo_estudiantes')->name('nuevo_estudiantes');

@@ -15,18 +15,18 @@ class CreateBecasDocentesTable extends Migration
     {
         Schema::create('becas_docentes', function (Blueprint $table) {
             $table->increments('becasDocentesId');
-            $table->string('becasdocentescodigo',10);
+            $table->string('becasdocentescodigo', 10);
             $table->integer('montoBeca');
             $table->date('fechainicioBeca');
             $table->date('fechaFinBeca');
-            $table->string('docentes_numeroIdentificacion',10);
+            $table->integer('fkdocentes');
             $table->integer('poseeBeca_poseeBecaId');
             $table->integer('fBDfinanciamientoBecaId');
             $table->integer('tipoBeca_tipoBecaId');
             $table->integer('becasdocentesOculto');
             $table->integer('becasdocentesAccion');
             $table->date('becasdocentesfecha');
-            $table->string('becasdocentesuser',45);
+            $table->string('becasdocentesuser', 45);
             $table->timestamps();
         });
     }

@@ -33,7 +33,8 @@ class PagesController extends Controller
 
     public function asignaturas()
     {
-        return view('asignaturas');
+        $asignaturas = 'App\Models\Asignatura'::all();
+        return view('asignaturas', compact('asignaturas'));
     }
     public function asistencia_estudiantes()
     {
@@ -169,7 +170,9 @@ class PagesController extends Controller
     }
     public function estado_civiles()
     {
-        return view('estado_civiles');
+
+        $estadocivil = 'App\Models\EstadoCivile'::all();
+        return view('estado_civiles', compact('estadocivil'));
     }
     public function estados_procesos()
     {
@@ -189,7 +192,8 @@ class PagesController extends Controller
     }
     public function estudiantes()
     {
-        return view('estudiantes');
+        $estudiantes = 'App\Models\Estudiante'::all();
+        return view('estudiantes', compact('estudiantes'));
     }
     public function estudinate_trabajos()
     {
@@ -217,7 +221,9 @@ class PagesController extends Controller
     }
     public function generos()
     {
-        return view('generos');
+
+        $genero = 'App\Models\Genero'::all();
+        return view('genero', compact('genero'));
     }
     public function grado_ocupacionals()
     {
